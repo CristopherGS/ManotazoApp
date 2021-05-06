@@ -168,6 +168,9 @@ public class frmMain extends javax.swing.JFrame {
             btnJugar.setText("Jugar de nuevo");
             btnJugar.setEnabled(true);
             System.out.println("--------------FIN------------------------\n");
+            player1 = new Jugador(1);
+            player2 = new Jugador(2);
+            player3 = new Jugador(3);
         }
 
         public int getNumeroCarta() {
@@ -226,6 +229,7 @@ public class frmMain extends javax.swing.JFrame {
             btnJugar.setText("Jugar de nuevo");
             btnJugar.setEnabled(true);
             System.out.println("--------------FIN------------------------\n");
+            
         }
 
         public int getNumeroCarta() {
