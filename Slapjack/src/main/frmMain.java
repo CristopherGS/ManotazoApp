@@ -178,64 +178,7 @@ public class frmMain extends javax.swing.JFrame {
         }
     }
 
-    public class Uno {
 
-        private int numeroCarta;
-
-        public Uno() {
-            numeroCarta = 0;
-            ordenJugadores = new String[3];
-            ordenTiempos = new String[3];
-            ordenLugares = new String[3];
-            contadorJugadores = 0;
-            // Cartas
-            lblCarta.setText("");
-            Image img = new ImageIcon(this.getClass().getResource("/cards/0.png")).getImage();
-            img = img.getScaledInstance(93, 138, java.awt.Image.SCALE_SMOOTH);
-            lblCarta.setIcon(new ImageIcon(img));
-            // Tabla
-            model = new DefaultTableModel(columnNames, 0);
-        }
-
-        public void comenzar_juego() {
-            System.out.println("--------------INICIO------------------------");
-            System.out.println("Preparando el juego");
-            System.out.println("Barajeando...");
-            System.out.println("Mazo listo para el juego");
-            btnJugar.setText("Jugando...");
-            while (numeroCarta != 5) {
-                try {
-                    Thread.sleep(1000);
-                } catch (InterruptedException ex) {
-                    Logger.getLogger(frmMain.class.getName()).log(Level.SEVERE, null, ex);
-                }
-                numeroCarta = (int) (Math.random() * 10 + 0);
-                Image img = new ImageIcon(this.getClass().getResource("/cards/" + String.valueOf(numeroCarta) + ".png")).getImage();
-                img = img.getScaledInstance(93, 138, java.awt.Image.SCALE_SMOOTH);
-                lblCarta.setIcon(new ImageIcon(img));
-            }
-            try {
-                Thread.sleep(2000);
-                System.out.println("Calculando resultados...");
-            } catch (InterruptedException ex) {
-                Logger.getLogger(frmMain.class.getName()).log(Level.SEVERE, null, ex);
-            }
-            for (int i = 0; i < 3; i++) {
-                Object[] rowdata;
-                rowdata = new Object[]{ordenLugares[i], ordenJugadores[i], ordenTiempos[i]};
-                model.addRow(rowdata);
-            }
-            tblResultados.setModel(model);
-            btnJugar.setText("Jugar de nuevo");
-            btnJugar.setEnabled(true);
-            System.out.println("--------------FIN------------------------\n");
-            
-        }
-
-        public int getNumeroCarta() {
-            return numeroCarta;
-        }
-    }
 
     /**
      * This method is called from within the constructor to initialize the form.
